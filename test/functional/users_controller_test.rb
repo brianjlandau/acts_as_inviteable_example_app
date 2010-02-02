@@ -21,7 +21,7 @@ class UsersControllerTest < ActionController::TestCase
     
     context 'post #create with bad data' do
       setup do
-        post :create, :user => {:login => '', :email => '', :password => '', :password_confirmation => '', :invitation_code => ''}
+        post :create, :user => {:login => '', :password => '', :password_confirmation => '', :invitation_code => ''}
       end
       
       should_not_change('Number of Users') do
@@ -37,8 +37,7 @@ class UsersControllerTest < ActionController::TestCase
     context 'post #create with good data' do
       setup do
         post :create, :user => {
-          :login => 'billfish', 
-          :email => 'billfish@example.com', 
+          :login => 'billfish',
           :password => 'password', 
           :password_confirmation => 'password',
           :invitation_code => @invite.token }

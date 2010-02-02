@@ -1,10 +1,9 @@
 <% semantic_form_for @user do |form| %>
   <% form.inputs do %>
+    <%= form.input :invitation_code %>
     <%= form.input :login %>
-    <%= form.input :email %>
     <%= form.input :password %>
     <%= form.input :password_confirmation %>
-    <%= form.input :invitation_code, :as => :hidden, :label => false %>
   <% end %>
   
   <%= form.buttons :commit %>
