@@ -2,7 +2,7 @@ class InvitationsForGenerator < Rails::Generator::NamedBase
   def manifest
     record do |m|
       m.class_collisions "Invitation", "#{class_name}InvitationMailer", "CreateInvitations", 
-                         'InvitationTest', 'UserInvitationMailerTest'
+                         'InvitationTest', "#{class_name}InvitationMailerTest"
       unless options[:skip_controller]
         m.class_collisions "InvitationsController", 'InvitationsHelper', 'InvitationsHelperTest',
                            'InvitationsControllerTest'

@@ -23,7 +23,7 @@ module ActiveRecord # :nodoc:
             validate_on_create :invite_code_valid
 
             before_create :set_invitation_limit
-            before_create :set_email_from_invite
+            before_validation_on_create :set_email_from_invite
           end
         end
       end

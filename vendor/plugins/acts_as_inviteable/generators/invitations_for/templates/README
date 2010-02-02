@@ -1,4 +1,7 @@
 You may wish to customize the routes that were added.
+You will need to actually set up your InvitationController and it's views to fit your needs.
+You'll also need to make sure your "UsersController" (or whatever the resource you use is called)
+has a "new" action and that it and the view handles the "invite_code" param correctly.
     
 Be sure to run rake db:migrate.
 If you want to, you may want to change the default invitation limit first in the migration file.
