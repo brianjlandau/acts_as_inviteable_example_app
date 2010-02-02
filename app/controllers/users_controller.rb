@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [:edit, :update]
   
   def new
-    @user = User.new
+    @user = User.new(:invitation_code => params[:invite_code])
   end
   
   def create

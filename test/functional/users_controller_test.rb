@@ -2,10 +2,15 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   context 'UsersController' do
+    setup do
+      @user = Factory(:user, :invitation_limit => 100)
+      @invite = Invitation.create(:sender => @user, :recipient_email => Factory.next(:email))
+      logout
+    end
     
     context 'get #new' do
       setup do
-        get :new
+        get :new, :invite_code => @invite.token
       end
       
       should_assign_to :user, :class => User
@@ -16,7 +21,7 @@ class UsersControllerTest < ActionController::TestCase
     
     context 'post #create with bad data' do
       setup do
-        post :create, :user => {:login => '', :email => '', :password => '', :password_confirmation => ''}
+        post :create, :user => {:login => '', :email => '', :password => '', :password_confirmation => '', :invitation_code => ''}
       end
       
       should_not_change('Number of Users') do
@@ -35,7 +40,8 @@ class UsersControllerTest < ActionController::TestCase
           :login => 'billfish', 
           :email => 'billfish@example.com', 
           :password => 'password', 
-          :password_confirmation => 'password' }
+          :password_confirmation => 'password',
+          :invitation_code => @invite.token }
       end
       
       should_change 'Number of users', :by => 1 do

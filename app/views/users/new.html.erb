@@ -4,6 +4,7 @@
     <%= form.input :email %>
     <%= form.input :password %>
     <%= form.input :password_confirmation %>
+    <%= form.input :invitation_code, :as => :hidden, :label => false %>
   <% end %>
   
   <%= form.buttons :commit %>
