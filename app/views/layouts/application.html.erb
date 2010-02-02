@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  
+  <title>Acts as Inviteable</title>
+  
+  <%= stylesheet_link_merged :base, :media => 'screen' %>
+</head>
+<body>
+  <div id="content">
+    <div id="flash-wrapper">
+      <%= flash_divs %>
+    </div>
+    
+    <%= yield %>
+    
+    <div id="footer">
+      <%- if logged_in? -%>
+        <%= link_to 'Logout', logout_path %>
+      <%- else -%>
+        <%= link_to 'Signup', register_path %>
+        <%= link_to 'login', login_path %>
+      <%- end -%>
+    </div>
+  </div>
+</body>
+</html>

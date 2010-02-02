@@ -1,0 +1,9 @@
+--- 
+javascripts: 
+- base: 
+  - jrails
+  - application
+stylesheets: 
+- base: 
+  - formtastic
+  - formtastic_changes
