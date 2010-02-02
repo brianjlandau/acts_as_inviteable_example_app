@@ -1,0 +1,6 @@
+Acts As Inviteable Example App
+==============================
+
+This is an example Rails app showing how to use the [acts\_as\_inviteable plugin](http://github.com/vigetlabs/acts_as_inviteable).
+
+This is to be used primarily as an example for how to create the necessary controller and view code, and some tests for that functionality.
