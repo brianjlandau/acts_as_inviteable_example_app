@@ -1,0 +1,4 @@
+You may wish to customize the routes that were added.
+    
+Be sure to run rake db:migrate.
+If you want to, you may want to change the default invitation limit first in the migration file.

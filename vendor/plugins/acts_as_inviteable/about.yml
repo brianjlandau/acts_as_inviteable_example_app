@@ -1,0 +1,9 @@
+name: acts_as_inviteable
+author: Brian Landau
+company: Viget Labs
+version: 1.2
+summary: A simple to use plugin for creating an invite system for an app.
+url: http://github.com/vigetlabs/acts_as_inviteable
+repository: git://github.com/vigetlabs/helper_me_test.git
+license: MIT
+rails_version: 2.1+

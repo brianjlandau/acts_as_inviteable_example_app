@@ -1,0 +1,18 @@
+Description:
+    Generates the invitation model, the mailer, and a controller for the invitations.
+
+Example:
+    ./script/generate invitations_for User
+
+    This will create:
+        Model:           app/models/invitation.rb
+        Unit Test:       test/unit/invitation_test.rb
+        Migration:       db/migrate/XXX_create_invitations.rb
+        Mailer:          app/models/user_invitation_mailer.rb
+        Mailer View:     app/views/user_invitation_mailer/invitation.erb
+        Mailer Test:     test/unit/user_invitation_mailer_test.rb
+        Controller:      app/controllers/invitation_controller.rb
+        Functional Test: test/functional/invitation_controller_test.rb
+        Views:           app/views/credit_card/new.html.erb,  app/views/credit_card/create.html.erb
+        Helper:          app/helpers/invitation_helper.rb
+        Helper Test:     test/unit/helpers/invitation_helper_test.rb
